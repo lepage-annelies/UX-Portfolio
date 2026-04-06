@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rob — The Road Companion — Annelies Le Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Logo-Annelies.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="js/auth.js"></script>
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Navigation
+       page="home"  → marks "Projecten" as active
+        root="./"    → this file lives at project root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-nav page="home" root="./"></site-nav>
+
+
+  <!-- ── Case study header ── -->
+  <div class="case-hero">
+    <div class="container--narrow">
+      <a class="case-hero__back" href="index.html">Terug naar alle projecten</a>
+
+      <div class="case-hero__tags">
+        <span class="tag">UX Research</span>
+        <span class="tag">Design Thinking</span>
+      </div>
+
+      <h1 class="case-hero__title">
+        Rob — The Road Companion
+      </h1>
+
+      <p class="case-hero__lead">
+        Rob is een digitale buddy voor jongeren met autisme die vastlopen tijdens het pendelen.
+  De app helpt hen op het moment zelf om rust te vinden en stap voor stap terug grip te krijgen
+  wanneer een situatie onverwacht verandert.
+      </p>
+
+      <div class="case-meta">
+        <div class="case-meta__item">
+          <span class="case-meta__label">Rol</span>
+          <span class="case-meta__value">UX/UI Designer</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Periode</span>
+          <span class="case-meta__value">2021</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Platform</span>
+          <span class="case-meta__value">Mobile app concept</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Team</span>
+          <span class="case-meta__value">1 UX/UI designer · 1 product manager · 1 developer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Cover image ── -->
+  <div class="container">
+    <div class="case-cover">
+      <img class="case-cover__image" src="Assets/Rob/Rob - Case study hero.png" alt="Rob case study cover" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+      <div class="case-cover__placeholder" hidden>Cover afbeelding · 16:7 · Projectschermen</div>
+    </div>
+  </div>
+
+  <!-- ── Body: sidebar + content ── -->
+  <div class="container">
+    <div class="case-body">
+
+      <aside class="case-sidebar">
+        <ul class="case-sidebar__nav">
+          <li><a href="#context">Context</a></li>
+          <li><a href="#probleem">Probleem</a></li>
+          <li><a href="#rol">Mijn rol</a></li>
+          <li><a href="#aanpak">Aanpak</a></li>
+          <li><a href="#oplossing">Oplossing</a></li>
+          <li><a href="#resultaat">Resultaat</a></li>
+          <li><a href="#reflectie">Reflectie</a></li>
+        </ul>
+      </aside>
+
+      <div class="case-content">
+
+        <section id="context">
+          <p class="case-section__label">01 — Context</p>
+          <h2 class="case-section__title">Pendelen als stressmoment voor jongeren met autisme</h2>
+          <p>
+    Rob ontstond tijdens The Summer Academy van In The Pocket, waar recent afgestudeerde
+    designers, developers en product managers samenwerkten rond een maatschappelijke uitdaging.
+  </p>
+  <p>
+    Het panelgesprek ging breed over het dagelijkse leven en de uitdagingen van jongeren met autisme.
+  Op basis van die verhalen kozen wij als team om te focussen op pendelen als één specifieke,
+  terugkerend pijnpunt.
+  </p>
+        </section>
+
+        <section id="probleem">
+          <p class="case-section__label">02 — Probleem</p>
+          <h2 class="case-section__title">Wanneer een routine breekt, valt ook het overzicht weg</h2>
+          <p>
+    Veel jongeren gaven aan dat ze in stressvolle pendelmomenten weten dat er “iets misloopt”,
+    maar niet meer helder kunnen denken over de eerste stap naar een oplossing.
+  </p>
+  <p>
+    Naast praktische hulp is er ook nood aan snelle regulatie van prikkels: eerst kalmeren,
+    daarna pas opnieuw beslissen wat te doen.
+  </p>
+  <blockquote class="case-question">
+    Hoe kunnen we jongeren met autisme tijdens het pendelen onmiddellijk ondersteunen met
+    rust, structuur en haalbare volgende stappen?
+  </blockquote>
+        </section>
+
+        <section id="rol">
+          <p class="case-section__label">03 — Mijn rol</p>
+          <h2 class="case-section__title">Van problem framing naar visueel concept</h2>
+          <p>
+    Ik werkte samen met het team aan de problem framing en de user flow. Als UX/UI designer
+    nam ik de lead in het visuele ontwerp van de app en in de uitwerking van de pitch.
+  </p>
+  <p>
+    De prototyping gebeurde in nauwe samenwerking met de developer. Tijdens de jury-Q&A
+    beantwoordden we vragen als team.
+  </p>
+        </section>
+
+        <section id="aanpak">
+  <p class="case-section__label">04 — Aanpak</p>
+  <h2 class="case-section__title">Design Thinking van empathie tot concept</h2>
+  <ul class="approach-list">
+    <li>
+      <span class="approach-list__method">Empathize</span>
+      <span class="approach-list__insight">
+        Panelgesprek met jongeren met autisme om concrete pendelervaringen, triggers
+        en copingstrategieën te begrijpen.
+      </span>
+    </li>
+    <li>
+      <span class="approach-list__method">Define</span>
+      <span class="approach-list__insight">
+        Inzichten vertaald naar scherpe probleemdefinitie via How Might We-vragen.
+      </span>
+    </li>
+    <li>
+      <span class="approach-list__method">Ideate</span>
+      <span class="approach-list__insight">
+        Snelle conceptverkenning met Crazy 8’s en een idea gallery om verschillende
+        richtingen te vergelijken.
+      </span>
+    </li>
+    <li>
+      <span class="approach-list__method">Prototype</span>
+      <span class="approach-list__insight">
+        Interactief concept uitgewerkt in Figma en iteratief aangescherpt met feedback
+        van ervaren productteams.
+      </span>
+    </li>
+  </ul>
+  <p>
+    Door de beperkte looptijd kwamen we niet meer toe aan formele gebruikerstesten
+    met eindgebruikers.
+  </p>
+</section>
+
+        <section id="oplossing">
+          <p class="case-section__label">05 — Oplossing</p>
+          <h2 class="case-section__title">Een buddy met twee duidelijke paden: begeleiden of kalmeren</h2>
+          <p>
+    Wanneer een pendelsituatie misloopt, biedt Rob meteen twee opties: <strong>Begeleiding</strong>
+    en <strong>Afleiding</strong>.
+  </p>
+  <p>
+    In <strong>Begeleiding</strong> helpt een chatbot de gebruiker met gerichte vragen om het
+    probleem op te splitsen in kleine, uitvoerbare stappen en zo het echte knelpunt te benoemen.
+  </p>
+  <p>
+    In <strong>Afleiding</strong> krijgt de gebruiker een rustgevende activiteit, zoals muziek,
+    visuals of een eenvoudige puzzel. Die voorkeuren worden vooraf in onboarding ingesteld, zodat
+    de interventie persoonlijk en prikkelveilig is.
+  </p>
+  <p>
+    Als extra veiligheid is er altijd een <strong>noodknop</strong> die onmiddellijk het ingestelde
+    noodcontact belt.
+  </p>
+          <div class="case-image-frame">
+            <img class="case-image-frame__image" src="Assets/Rob/Rob - Case study inline image.png" alt="Eindontwerp van het Rob project" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+            <div class="case-image-placeholder case-image-placeholder--green" hidden>
+              Eindontwerp · 3 schermen
+            </div>
+          </div>
+          <p class="case-image-caption">
+            Eindontwerp van het Rob concept, met focus op rust, duidelijkheid en veiligheid
+          </p>
+        </section>
+
+        <section id="resultaat">
+          <p class="case-section__label">06 — Resultaat</p>
+  <h2 class="case-section__title">Een gevalideerd concept met duidelijke richting</h2>
+  <p>
+    Het resultaat van de academy was een helder en pitchklaar appconcept dat focust op
+    directe ondersteuning in stressmomenten tijdens het pendelen.
+  </p>
+  <p>
+    Omdat dit project in een conceptfase zat, lag de focus op het scherpstellen van de richting:
+  een oplossing die op crisismomenten zowel rust als houvast biedt.
+  </p>
+  <p>
+    De volgende stap is om het concept met eindgebruikers te testen. Daarnaast is nauwe samenwerking
+  nodig om de copy volledig op punt te zetten: in dit type ondersteuning moet taal zo helder mogelijk
+  zijn, zonder ruimte voor interpretatiefouten.
+  </p>
+        </section>
+
+        <section id="reflectie">
+          <p class="case-section__label">07 — Reflectie</p>
+  <h2 class="case-section__title">Wat ik hieruit meenam</h2>
+  <p>
+    <strong>Wat goed werkte:</strong> De combinatie van panelinzichten en snelle ideatierondes
+    hielp ons om in korte tijd tot relevante concepten te komen die echt aansluiten op de doelgroep.
+  </p>
+  <p>
+    <strong>Wat ik anders zou doen:</strong> Ik zou sneller een testbaar prototype inzetten met
+    eindgebruikers, zodat we aannames vroeger kunnen valideren.
+  </p>
+  <p>
+    <strong>Wat ik leerde:</strong> Ontwerpen voor neurodiverse gebruikers vraagt extra aandacht
+    voor rust, voorspelbaarheid en stap-voor-stap begeleiding. In dit project ontdekte ik ook mijn
+    liefde voor de How Might We-techniek en Crazy 8’s als krachtige tools om ideeën te openen.
+  </p>
+        </section>
+
+      </div><!-- /case-content -->
+    </div><!-- /case-body -->
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Terug naar alle projecten</a>
+      <a href="case-study-Results&Insights.html" data-slug="case-study-Results&Insights" class="case-nav-next">Resultaten & Inzichten →</a>
+    </div>
+
+  </div><!-- /container -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Footer
+        root="./"  → resolves paths from root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-footer root="./"></site-footer>
+
+
+      <script src="js/components.js"></script>
+      <script src="js/modal.js"></script>
+      <script>
+        const { isAuthenticated, requiresPassword } = window.portfolioAuth;
+
+        const nextLink = document.querySelector('.case-nav-next');
+
+        if (nextLink) {
+          nextLink.addEventListener('click', (e) => {
+            const slug = nextLink.dataset.slug;
+
+            if (!requiresPassword(slug) || isAuthenticated()) {
+              return;
+            }
+
+            e.preventDefault();
+            const destinationHref = nextLink.getAttribute('href');
+            window.showPasswordModal(() => {
+              window.location.href = destinationHref;
+            });
+          });
+        }
+      </script>
+      <button id="scroll-to-top" class="scroll-to-top" data-tooltip="Back to top" aria-label="Terug naar boven" hidden>
+        <span aria-hidden="true">↑</span>
+      </button>
+      <script>
+        const scrollBtn = document.getElementById('scroll-to-top');
+        window.addEventListener('scroll', () => {
+          scrollBtn.hidden = window.scrollY < 300;
+        });
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      </script>
+      <script>
+        (function () {
+          const navLinks = document.querySelectorAll('.case-sidebar__nav a');
+          const sections = document.querySelectorAll('.case-content section[id]');
+          if (!navLinks.length || !sections.length) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((link) => link.classList.remove('active'));
+                const active = document.querySelector(
+                  `.case-sidebar__nav a[href="#${entry.target.id}"]`
+                );
+                if (active) active.classList.add('active');
+              }
+            });
+          }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+          sections.forEach((s) => observer.observe(s));
+        })();
+      </script>
+</body>
+</html>

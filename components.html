@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Component Reference — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Logo-Annelies.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Reference page styles — scoped, not part of styles.css ── */
+    .ref-page      { max-width: 1060px; margin: 0 auto; padding: 0 var(--space-6) var(--space-16); }
+
+    .ref-header    { padding: var(--space-12) 0 var(--space-8); border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-12); }
+    .ref-header h1 { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; margin-bottom: var(--space-3); }
+    .ref-header p  { color: var(--color-text-secondary); max-width: 560px; }
+
+    .ref-toc       { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+    .ref-toc a     { font-size: var(--text-sm); color: var(--color-accent); border: 1px solid var(--color-accent-subtle); background: var(--color-accent-subtle); padding: 4px 12px; border-radius: var(--radius-full); transition: background var(--transition-fast); }
+    .ref-toc a:hover { background: var(--color-accent); color: #fff; }
+
+    .ref-section   { margin-bottom: var(--space-16); }
+    .ref-section-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-4); margin-bottom: var(--space-8); }
+    .ref-section-header h2 { font-size: var(--text-xl); font-weight: 500; }
+    .ref-id        { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); }
+
+    .ref-preview   { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); margin-bottom: var(--space-5); overflow: hidden; }
+    .ref-preview--flush { padding: 0; }
+    .ref-preview--dark  { background: #1A1917; }
+
+    .ref-note      { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.65; }
+    .ref-note + .ref-note { margin-top: var(--space-3); }
+    .ref-note strong { color: var(--color-text-primary); font-weight: 500; }
+    code { font-family: "SF Mono","Fira Code",monospace; font-size: 0.8em; background: var(--color-accent-subtle); color: var(--color-accent); padding: 1px 5px; border-radius: 3px; white-space: nowrap; }
+
+    .ref-class-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); margin-top: var(--space-5); }
+    .ref-class-table th { text-align: left; font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); font-weight: 500; padding: var(--space-2) var(--space-4); border-bottom: 1px solid var(--color-border); }
+    .ref-class-table td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); color: var(--color-text-secondary); vertical-align: top; }
+    .ref-class-table td:first-child { color: var(--color-accent); font-family: "SF Mono","Fira Code",monospace; font-size: 0.8em; white-space: nowrap; background: none; }
+    .ref-class-table tr:last-child td { border-bottom: none; }
+
+    .ref-row       { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: flex-start; }
+    .ref-col-2     { flex: 1; min-width: 240px; }
+  </style>
+</head>
+<body>
+
+  <site-nav page="" root="./"></site-nav>
+
+  <div class="ref-page">
+
+    <!-- ── Header ── -->
+    <div class="ref-header">
+      <h1>Component Reference</h1>
+      <p>
+        Alle herbruikbare componenten voor het portfolio — met live preview,
+        klasse-overzicht en gebruiksinstructies. Geen component heeft inline styles.
+        Alles staat in <code>styles.css</code>.
+      </p>
+
+      <nav class="ref-toc" aria-label="Naar sectie">
+        <a href="#reuse">Hergebruik</a>
+        <a href="#nav">Navbar</a>
+        <a href="#hero">Hero</a>
+        <a href="#card">Project Card</a>
+        <a href="#footer">Footer</a>
+        <a href="#shared">Gedeeld</a>
+      </nav>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════
+         HOW TO REUSE
+    ═════════════════════════════════════════════════════ -->
+    <div class="ref-section" id="reuse">
+      <div class="ref-section-header">
+        <h2>Hoe hergebruik je componenten?</h2>
+        <span class="ref-id">Strategie</span>
+      </div>
+
+      <div class="ref-note">
+        <strong>Navbar &amp; Footer zijn Web Components.</strong>
+        Ze leven in <code>js/components.js</code> als <code>&lt;site-nav&gt;</code>
+        en <code>&lt;site-footer&gt;</code>. Je schrijft ze één keer op elke pagina
+        als één HTML-regel. Wil je de tekst in alle footers aanpassen? Dan
+        bewerk je alleen <code>js/components.js</code> — niet elke pagina apart.
+      </div>
+
+      <div class="ref-note" style="margin-top: var(--space-3);">
+        <strong>Hero en Project Card zijn HTML-patronen.</strong>
+        Ze hebben geen JS nodig. Kopieer het HTML-blok, pas de content aan,
+        klassen zijn altijd hetzelfde. Voeg een nieuwe case toe? Kopieer één
+        <code>.project-card</code> blok en vul in.
+      </div>
+
+      <table class="ref-class-table" style="margin-top: var(--space-6);">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Techniek</th>
+            <th>Bewerk je hier</th>
+            <th>Aanpassen per pagina via</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;site-nav&gt;</td>
+            <td>Web Component</td>
+            <td><code>js/components.js</code></td>
+            <td><code>page="…"</code> attribuut</td>
+          </tr>
+          <tr>
+            <td>&lt;site-footer&gt;</td>
+            <td>Web Component</td>
+            <td><code>js/components.js</code></td>
+            <td><code>root="…"</code> attribuut</td>
+          </tr>
+          <tr>
+            <td>Hero section</td>
+            <td>HTML patroon</td>
+            <td>De HTML-pagina zelf</td>
+            <td>Tekst en links direct aanpassen</td>
+          </tr>
+          <tr>
+            <td>Project Card</td>
+            <td>HTML patroon</td>
+            <td>De HTML-pagina zelf</td>
+            <td><code>card-color-1/2/3/4</code> voor kleur</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ref-note" style="margin-top: var(--space-5);">
+        <strong>Nieuwe pagina toevoegen in 3 stappen:</strong><br>
+        1. Kopieer <code>about.html</code> als startpunt.<br>
+        2. Verander <code>page="about"</code> naar de juiste waarde in <code>&lt;site-nav&gt;</code>.<br>
+        3. Voeg de nieuwe link toe in het <code>NAV_LINKS</code> array in <code>js/components.js</code>.
+        Alle bestaande pagina's krijgen de link automatisch.
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════
+         COMPONENT 1: NAVBAR
+    ═════════════════════════════════════════════════════ -->
+    <div class="ref-section" id="nav">
+      <div class="ref-section-header">
+        <h2>01 — Navbar</h2>
+        <span class="ref-id">&lt;site-nav&gt; Web Component</span>
+      </div>
+
+      <!-- Live preview -->
+      <div class="ref-preview ref-preview--flush">
+        <div style="background: rgba(249,248,246,0.95); border-bottom: 1px solid var(--color-border);">
+          <div style="max-width: 100%; padding: var(--space-4) var(--space-6); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-display); font-size: var(--text-lg);">Annelies Le Page</span>
+            <ul style="display: flex; gap: var(--space-8); list-style: none;">
+              <li><span style="font-size: var(--text-sm); color: var(--color-text-primary); font-weight: 500; border-bottom: 1px solid var(--color-accent); padding-bottom: 2px;">Werk</span></li>
+              <li><span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Case Study</span></li>
+              <li><span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Over mij</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Usage -->
+      <div class="ref-note">
+        <strong>Gebruik in HTML:</strong><br><br>
+        Root pagina (<code>index.html</code>):<br>
+        <code>&lt;site-nav page="home" root="./"&gt;&lt;/site-nav&gt;</code><br><br>
+        Andere pagina's in dezelfde map:<br>
+        <code>&lt;site-nav page="about" root="./"&gt;&lt;/site-nav&gt;</code>
+      </div>
+
+      <table class="ref-class-table">
+        <thead>
+          <tr><th>Attribuut</th><th>Waarden</th><th>Effect</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>page</td>
+            <td><code>"home"</code> <code>"case"</code> <code>"about"</code></td>
+            <td>Zet <code>.active</code> op de juiste navlink</td>
+          </tr>
+          <tr>
+            <td>root</td>
+            <td><code>"./"</code> of <code>"../"</code></td>
+            <td>Corrigeert alle href-paden voor de huidige map</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="ref-class-table">
+        <thead>
+          <tr><th>Class</th><th>Element</th><th>Beschrijving</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>.nav-inner</td><td><code>div</code></td><td>Max-width container, flex row</td></tr>
+          <tr><td>.nav-logo</td><td><code>a</code></td><td>Serif logo-link, links bovenaan</td></tr>
+          <tr><td>.nav-links</td><td><code>ul</code></td><td>Horizontale linklijst, verborgen op mobiel</td></tr>
+          <tr><td>.nav-links.open</td><td><code>ul</code></td><td>Mobile dropdown (JS toggle)</td></tr>
+          <tr><td>.nav-toggle</td><td><code>button</code></td><td>Hamburger, zichtbaar onder 640px</td></tr>
+          <tr><td>.active</td><td><code>a</code></td><td>Huidige pagina — vet + underline</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════
+         COMPONENT 2: HERO
+    ═════════════════════════════════════════════════════ -->
+    <div class="ref-section" id="hero">
+      <div class="ref-section-header">
+        <h2>02 — Hero Section</h2>
+        <span class="ref-id">HTML patroon</span>
+      </div>
+
+      <div class="ref-preview ref-preview--flush">
+        <section class="hero" style="padding-top: var(--space-10); padding-bottom: var(--space-10);">
+          <div class="container">
+            <p class="hero__eyebrow">UX &amp; Product Designer · Belgium</p>
+            <h1 class="hero__headline">
+              Design dat werkt voor <span class="hero__underline">mensen</span>,<br>
+              <span class="hero__secondary">niet voor schermen.</span>
+            </h1>
+            <p class="hero__sub">
+              Ik ontwerp digitale producten vanuit begrip — door te luisteren,
+              te testen en te vereenvoudigen tot wat echt telt.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary"   href="#work">Bekijk mijn werk</a>
+              <a class="btn btn--secondary" href="#">Over mij</a>
+            </div>
+            <p class="hero__scroll-hint">Selectie van projecten</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="ref-note">
+        Gebruik <code>&lt;span class="hero__underline"&gt;</code> voor het accent_underline,
+        en <code>&lt;span class="hero__secondary"&gt;</code> voor de secundaire tekstkleur.
+        Schrijf in eerste persoon, één zin tot twee regels. De
+        <code>.hero__scroll-hint</code> is optioneel — weglaten als de
+        pagina geen werk-grid direct eronder heeft.
+      </div>
+
+      <table class="ref-class-table">
+        <thead>
+          <tr><th>Class</th><th>Element</th><th>Beschrijving</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>.hero</td><td><code>section</code></td><td>Verticale padding boven en onder</td></tr>
+          <tr><td>.hero__eyebrow</td><td><code>p</code></td><td>Uppercase label met decoratieve lijn ::before</td></tr>
+          <tr><td>.hero__headline</td><td><code>h1</code></td><td>Display font, schaalt met clamp()</td></tr>
+          <tr><td>.hero__underline</td><td><code>span</code></td><td>Accent kleur met border-bottom en rounded ends</td></tr>
+          <tr><td>.hero__secondary</td><td><code>span</code></td><td>Secundaire tekstkleur</td></tr>
+          <tr><td>.hero__sub</td><td><code>p</code></td><td>Grotere body tekst, max 520px breed</td></tr>
+          <tr><td>.hero__actions</td><td><code>div</code></td><td>Flex row voor buttons</td></tr>
+          <tr><td>.hero__scroll-hint</td><td><code>p</code></td><td>Muted label, lijn na via ::after</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════
+         COMPONENT 3: PROJECT CARD
+    ═════════════════════════════════════════════════════ -->
+    <div class="ref-section" id="card">
+      <div class="ref-section-header">
+        <h2>03 — Project Card</h2>
+        <span class="ref-id">HTML patroon · 4 kleurvarianten</span>
+      </div>
+
+      <div class="ref-preview">
+        <div class="project-grid">
+
+          <a class="project-card" href="#">
+            <div class="project-card__thumb-placeholder card-color-1">Thumbnail · 16:9</div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">UX Research</span>
+                <span class="tag">Dashboard</span>
+              </div>
+              <h3 class="project-card__title">Onboarding Redesign voor een SaaS-platform</h3>
+              <p class="project-card__desc">
+                Gebruikers haakten af in stap 3. Door diepte-interviews loste ik het
+                probleem op aan de bron.
+              </p>
+              <div class="project-card__meta">
+                <span>UX Designer · 2024</span>
+                <span class="project-card__arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-card__thumb-placeholder card-color-2">Thumbnail · 16:9</div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">Interaction Design</span>
+                <span class="tag">iOS</span>
+              </div>
+              <h3 class="project-card__title">Checkout Flow — Minder stappen, meer conversie</h3>
+              <p class="project-card__desc">
+                Van 7 naar 3 stappen. 34% hogere voltooiing en minder abandon op mobiel.
+              </p>
+              <div class="project-card__meta">
+                <span>Product Designer · 2023</span>
+                <span class="project-card__arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="ref-note">
+        De kaart is een <code>&lt;a&gt;</code> — de hele kaart is klikbaar.
+        Gebruik <code>card-color-1</code> t/m <code>card-color-4</code> voor de
+        thumbnail achtergrond. Vervang de placeholder div door een <code>&lt;img&gt;</code>
+        met class <code>.project-card__thumb</code> zodra je echte afbeeldingen hebt.
+      </div>
+
+      <table class="ref-class-table">
+        <thead>
+          <tr><th>Class</th><th>Element</th><th>Beschrijving</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>.project-card</td><td><code>a</code></td><td>Kaart container, hover: lift + schaduw</td></tr>
+          <tr><td>.project-card__thumb-placeholder</td><td><code>div</code></td><td>Gekleurde placeholder, 16:9 ratio</td></tr>
+          <tr><td>.project-card__thumb</td><td><code>img</code></td><td>Echte thumbnail afbeelding, 16:9, object-fit: cover</td></tr>
+          <tr><td>.card-color-1</td><td>modifier</td><td>Blauw (#EBF0F8)</td></tr>
+          <tr><td>.card-color-2</td><td>modifier</td><td>Zand (#F0EDE8)</td></tr>
+          <tr><td>.card-color-3</td><td>modifier</td><td>Groen (#E8F0EB)</td></tr>
+          <tr><td>.card-color-4</td><td>modifier</td><td>Roze (#F0E8EE)</td></tr>
+          <tr><td>.project-card__body</td><td><code>div</code></td><td>Padding, flex column</td></tr>
+          <tr><td>.project-card__tags</td><td><code>div</code></td><td>Flex row van tags</td></tr>
+          <tr><td>.project-card__title</td><td><code>h3</code></td><td>text-xl, font-weight 500</td></tr>
+          <tr><td>.project-card__desc</td><td><code>p</code></td><td>text-sm, secondary kleur</td></tr>
+          <tr><td>.project-card__meta</td><td><code>div</code></td><td>Flex row: label links, pijl rechts</td></tr>
+          <tr><td>.project-card__arrow</td><td><code>span</code></td><td>Cirkel icoon, vult blauw op hover</td></tr>
+        </tbody>
+      </table>
+
+      <div class="ref-note" style="margin-top: var(--space-4);">
+        <strong>Nieuwe case toevoegen:</strong> kopieer één volledig
+        <code>.project-card</code> blok in de <code>.project-grid</code>, pas
+        title, desc, tags, href en card-color aan.
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════
+         COMPONENT 4: FOOTER
+    ═════════════════════════════════════════════════════ -->
+    <div class="ref-section" id="footer">
+      <div class="ref-section-header">
+        <h2>04 — Footer</h2>
+        <span class="ref-id">&lt;site-footer&gt; Web Component</span>
+      </div>
+
+      <div class="ref-preview ref-preview--flush">
+        <footer>
+          <div class="footer-inner">
+            <span>© 2024 Annelies Le Page</span>
+            <nav class="footer-links">
+              <a href="#">LinkedIn</a>
+              <a href="#">Dribbble</a>
+            </nav>
+          </div>
+        </footer>
+      </div>
+
+      <div class="ref-note">
+        <strong>Gebruik in HTML:</strong><br><br>
+        Root pagina:<br>
+        <code>&lt;site-footer root="./"&gt;&lt;/site-footer&gt;</code><br><br>
+        Sub-pagina:<br>
+        <code>&lt;site-footer root="../"&gt;&lt;/site-footer&gt;</code><br><br>
+        Het jaar wordt automatisch ingevuld via <code>new Date().getFullYear()</code> —
+        je hoeft dit nooit handmatig bij te werken.
+      </div>
+
+      <table class="ref-class-table">
+        <thead>
+          <tr><th>Attribuut</th><th>Waarden</th><th>Effect</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>root</td>
+            <td><code>"./"</code> of <code>"../"</code></td>
+            <td>Corrigeert pad naar CV en andere assets</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="ref-class-table">
+        <thead>
+          <tr><th>Class</th><th>Element</th><th>Beschrijving</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>footer</td><td><code>footer</code></td><td>Semantisch element, padding top/bottom</td></tr>
+          <tr><td>.footer-inner</td><td><code>div</code></td><td>Max-width container, flex row</td></tr>
+          <tr><td>.footer-links</td><td><code>nav</code></td><td>Flex row van links, gap var(--space-6)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="ref-note" style="margin-top: var(--space-4);">
+        <strong>Link toevoegen aan de footer:</strong> bewerk alleen het
+        <code>innerHTML</code> template in de <code>SiteFooter</code> klasse
+        in <code>js/components.js</code>. Alle pagina's worden automatisch bijgewerkt.
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════
+         SHARED: BUTTONS, TAGS, LABELS
+    ═════════════════════════════════════════════════════ -->
+    <div class="ref-section" id="shared">
+      <div class="ref-section-header">
+        <h2>05 — Gedeelde elementen</h2>
+        <span class="ref-id">Buttons · Tags · Labels</span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="ref-preview">
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center;">
+          <a class="btn btn--primary">Bekijk mijn werk</a>
+          <a class="btn btn--secondary">Over mij</a>
+          <a class="btn btn--ghost">Meer lezen →</a>
+        </div>
+      </div>
+
+      <table class="ref-class-table" style="margin-bottom: var(--space-6);">
+        <thead><tr><th>Class</th><th>Gebruik</th></tr></thead>
+        <tbody>
+          <tr><td>.btn.btn--primary</td><td>Hoofdactie per sectie — gevuld accent</td></tr>
+          <tr><td>.btn.btn--secondary</td><td>Nevenactie — outlined</td></tr>
+          <tr><td>.btn.btn--ghost</td><td>Inline link-stijl — text only</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Tags & Labels -->
+      <div class="ref-preview">
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center;">
+          <span class="tag">UX Research</span>
+          <span class="tag">Dashboard</span>
+          <span class="tag">iOS</span>
+          <span class="label">2022 – 2024</span>
+        </div>
+      </div>
+
+      <table class="ref-class-table">
+        <thead><tr><th>Class</th><th>Gebruik</th></tr></thead>
+        <tbody>
+          <tr><td>.tag</td><td>Discipline / categorie badge — blauw op blauw-subtiel</td></tr>
+          <tr><td>.label</td><td>Datum, jaar of meta — muted uppercase</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div><!-- /ref-page -->
+
+  <site-footer root="./"></site-footer>
+
+  <script src="js/components.js"></script>
+</body>
+</html>

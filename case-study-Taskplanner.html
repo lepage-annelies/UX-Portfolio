@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskplanner — Annelies Le Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Logo-Annelies.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="js/auth.js"></script>
+  <script>
+    if (!window.portfolioAuth.isAuthenticated()) {
+      window.location.replace('index.html');
+    }
+  </script>
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Navigation
+       page="home"  → marks "Projecten" as active
+        root="./"    → this file lives at project root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-nav page="home" root="./"></site-nav>
+
+
+  <!-- ── Case study header ── -->
+  <div class="case-hero">
+    <div class="container--narrow">
+      <a class="case-hero__back" href="index.html">Terug naar alle projecten</a>
+
+      <div class="case-hero__tags">
+        <span class="tag">UX Research</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">AI Prototyping</span>
+      </div>
+
+      <h1 class="case-hero__title">
+        Taskplanner — Complex plannen terugbrengen tot overzicht
+      </h1>
+
+      <p class="case-hero__lead">
+        Tijdens de migratie naar een nieuw digitaal leerplatform werd de taakplanner
+        opnieuw opgebouwd. Dat gaf ruimte om een complexe, verouderde flow te herdenken
+        en beter af te stemmen op de noden van leerkrachten,zelfs binnen strikte
+        scherm- en contentbeperkingen.
+      </p>
+
+      <div class="case-meta">
+        <div class="case-meta__item">
+          <span class="case-meta__label">Rol</span>
+          <span class="case-meta__value">UX Designer</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Periode</span>
+          <span class="case-meta__value">Okt 2024 – Apr 2025</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Platform</span>
+          <span class="case-meta__value">Digitaal leerplatform · Web</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Team</span>
+          <span class="case-meta__value">1 UX designer · 1 product manager · 2 developers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Cover image ── -->
+  <div class="container">
+    <div class="case-cover">
+      <img class="case-cover__image" src="Assets/Taskplanner/Taskplanner - Case study hero.png" alt="Taskplanner case study cover" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+      <div class="case-cover__placeholder" hidden>Cover afbeelding · 16:7 · Projectschermen</div>
+    </div>
+  </div>
+
+  <!-- ── Body: sidebar + content ── -->
+  <div class="container">
+    <div class="case-body">
+
+      <aside class="case-sidebar">
+        <ul class="case-sidebar__nav">
+          <li><a href="#context">Context</a></li>
+          <li><a href="#probleem">Probleem</a></li>
+          <li><a href="#rol">Mijn rol</a></li>
+          <li><a href="#aanpak">Aanpak</a></li>
+          <li><a href="#oplossing">Oplossing</a></li>
+          <li><a href="#resultaat">Resultaat</a></li>
+          <li><a href="#reflectie">Reflectie</a></li>
+        </ul>
+      </aside>
+
+      <div class="case-content">
+
+        <section id="context">
+          <p class="case-section__label">01 — Context</p>
+          <h2 class="case-section__title">Een bestaande functionaliteit met nieuwe kansen</h2>
+          <p>
+            Taskplanner ontstond binnen de context van een platformmigratie bij Infinitas
+            Learning - Plantyn. In het oude platform konden leerkrachten al oefeningen
+            selecteren uit verschillende methodes en die samenbrengen in een taak voor hun
+            leerlingen. Bij de overstap naar het nieuwe platform moest die functionaliteit
+            opnieuw ontwikkeld worden.
+          </p>
+          <p>
+            Dat was meer dan een technische heropbouw. Het gaf ons de kans om het volledige
+            proces <strong>gebruiksvriendelijker te maken</strong> en beter te laten aansluiten
+            bij de patronen en verwachtingen van het nieuwe platform. De taakplanner werd
+            eerst ontworpen voor het basisonderwijs en daarna, op basis van de geleerde
+            inzichten, verder verfijnd voor het secundair onderwijs.
+          </p>
+        </section>
+
+        <section id="probleem">
+          <p class="case-section__label">02 — Probleem</p>
+          <h2 class="case-section__title">Te veel complexiteit, te weinig overzicht</h2>
+          <p>
+            Leerkrachten verloren in het bestaande proces snel het overzicht, zeker wanneer
+            ze oefeningen over meerdere boeken of boekstructuren heen wilden selecteren.
+            Ze konden niet voor meerdere klassen tegelijk plannen en moesten voor elke
+            differentiatiegroep opnieuw door hetzelfde proces.
+          </p>
+          <p>
+            De uitdaging zat niet alleen in de flow. We werkten ook met een zeer complexe
+            contentstructuur die nog dateerde van vóór het digitale platform. Bovendien had
+            <strong>63% van onze gebruikers een schermhoogte van slechts 600px</strong>, waardoor
+            elke ontwerpkeuze extra zorgvuldig moest omgaan met ruimte en overzicht.
+          </p>
+          <blockquote class="case-question">
+            Hoe kunnen we een complexe taakplanner zo herstructureren dat leerkrachten snel
+            oefeningen vinden, hun selectie bewaren en taken plannen zonder overzicht te verliezen?
+          </blockquote>
+        </section>
+
+        <section id="rol">
+          <p class="case-section__label">03 — Mijn rol</p>
+          <h2 class="case-section__title">Ik leidde de flow, concepten en prototypes</h2>
+          <p>
+            Als enige UX Designer leidde ik de informatiearchitectuur, de wizard-flow,
+            de conceptkeuzes en het uitwerken van interactieve prototypes. Dit was ook een van de
+            eerste projecten binnen het bedrijf waarbij AI prototyping werd ingezet voor
+            usability testing, een aanpak waarvan ik binnen dit project de leiding nam.
+          </p>
+          <p>
+            Mijn product manager ondersteunde bij het modereren van de tests en het
+            presenteren aan stakeholders. Samen met de developers konden we nieuwe patronen
+            ook meteen aftoetsen op technische haalbaarheid.
+          </p>
+        </section>
+
+        <section id="aanpak">
+          <p class="case-section__label">04 — Aanpak</p>
+          <h2 class="case-section__title">Iteratief testen met vier concepten</h2>
+          <ul class="approach-list">
+            <li>
+              <span class="approach-list__method">Feedback</span>
+              <span class="approach-list__insight">
+                We vertrokken vanuit bestaande feedbackkanalen en de kennis uit de vorige
+                versie van de taakplanner om requirements en pijnpunten scherp te stellen.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Wizard</span>
+              <span class="approach-list__insight">
+                In een eerste testronde valideerden we de overstap van één grote one-pager
+                naar een wizard met maximaal vier stappen. Dat gaf gebruikers meer rust en
+                focus per stap.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">AI prototyping</span>
+              <span class="approach-list__insight">
+                Voor de oefening selectie werkte ik vier richtingen uit via V0: accordion,
+                tabs, dialog en een two-surfaces-concept. Zo konden we elk concept als
+                realistische interactieve flow testen in plaats van als statisch scherm.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Iteratie</span>
+              <span class="approach-list__insight">
+                In totaal deden we drie testrondes met gebruikers. Telkens verfijnden we
+                het concept op basis van de feedback, met de meeste iteraties op de
+                oefeningselectiestap.
+              </span>
+            </li>
+          </ul>
+          <div class="case-image-frame">
+            <img class="case-image-frame__image" src="Assets/Taskplanner/Taskplanner - Case study inline image - 1.png" alt="Wireframes en user flow van Taskplanner" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+            <div class="case-image-placeholder" hidden>Wireframes &amp; user flow — 3 varianten</div>
+          </div>
+          <p class="case-image-caption">
+            De vier concepten voor oefeningselectie, getest als interactieve flows om
+            gedrag en voorkeuren realistischer te valideren.
+          </p>
+          <p>
+            De tests maakten duidelijk dat niet alleen de inhoud belangrijk was, maar ook
+            hoe gebruikers hun selectie konden bekijken terwijl ze door complexe content
+            navigeerden. Dat inzicht stuurde de keuze voor het winning concept.
+          </p>
+        </section>
+
+        <section id="oplossing">
+          <p class="case-section__label">05 — Oplossing</p>
+          <h2 class="case-section__title">Een wizard met twee surfaces voor oefeningselectie</h2>
+          <p>
+            Het winnende concept werkte met twee surfaces. Links een groter vlak waarin
+            leerkrachten door de oefeningen konden bladeren via de boomstructuur, zoekfunctie
+            of recent bekeken secties. Rechts een smaller vlak met een permanent overzicht
+            van alle reeds geselecteerde oefeningen.
+          </p>
+          <p>
+            Dat gaf veel meer overzicht dan concepten als de accordion, omdat zoeken en
+            selecteren niet langer in conflict waren. Gebruikers konden hun selectie op elk
+            moment controleren, herbekijken of verwijderen, dit zonder hun context te verliezen.
+            Door de breedte te benutten in plaats van verticale ruimte te verliezen, speelde
+            dit ook direct in op de beperkte schermhoogte van veel gebruikers.
+          </p>
+          <p>
+            Een extra designuitdaging was de voorkeur voor een card view. Op elke kaart
+            moesten twee acties naast elkaar bestaan: de oefening bekijken via preview en
+            de oefening toevoegen aan de selectie. Daarom ontwierp ik een custom
+            kaartinteractie met duidelijke actiehiërarchie, zodat leerkrachten snel konden
+            scannen en toevoegen zonder per ongeluk de preview-flow te onderbreken.
+          </p>
+          <div class="case-image-frame">
+            <img class="case-image-frame__image" src="Assets/Taskplanner/Taskplanner - Case study inline image - 2.png" alt="Eindontwerp van het Taskplanner project" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+            <div class="case-image-placeholder case-image-placeholder--green" hidden>
+              Eindontwerp — Onboarding flow · 4 schermen
+            </div>
+          </div>
+          <p class="case-image-caption">
+            Het eindconcept: compacte wizard-stappen, een blijvend selectie-overzicht
+            en een nieuwe kaartinteractie voor preview én toevoegen in één beweging.
+          </p>
+        </section>
+
+        <section id="resultaat">
+          <p class="case-section__label">06 — Resultaat</p>
+          <h2 class="case-section__title">Betere planners en nieuwe patronen voor het platform</h2>
+          <p>
+            Het project leverde niet alleen een duidelijkere taakplanner op, maar ook
+            bredere impact binnen het team en het product.
+          </p>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Outcome</th>
+                <th>Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AI prototyping</td>
+                <td class="positive">Eerste geslaagde toepassing binnen het bedrijf van realistische prototype testing via AI</td>
+              </tr>
+              <tr>
+                <td>Design system</td>
+                <td class="positive">Wizard-flow en nieuwe kaartinteractie werden als patronen gedoneerd aan het design system</td>
+              </tr>
+              <tr>
+                <td>Gedifferentieerde oefeningen</td>
+                <td class="positive">Gebruik van gedifferentieerde oefeningen nam toe, doordat dit nu in één flow kon ingesteld worden</td>
+              </tr>
+              <tr>
+                <td>Ingeplande taken</td>
+                <td class="positive">Duidelijke stijging in het aantal ingeplande taken na de uitrol</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            De inzichten uit de basisonderwijs-versie stuurden ook de verfijning voor
+            het secundair onderwijs: gebruikers wilden eerst oefeningen selecteren en pas
+            daarna leerlingen en differentiatie instellen. Ook de volgorde in de
+            samenvattingsstap werd aangepast: details eerst, dan leerlingen, dan oefeningen.
+          </p>
+        </section>
+
+        <section id="reflectie">
+          <p class="case-section__label">07 — Reflectie</p>
+          <h2 class="case-section__title">Wat ik hieruit meenam</h2>
+          <p>
+            <strong>Wat goed ging:</strong> Door meerdere concepten snel als interactieve
+            flows te testen, konden we gericht beslissen welke richting echt werkte voor
+            gebruikers. AI prototyping zorgde voor scherpere feedback en maakte discussies
+            met stakeholders concreter.
+          </p>
+          <p>
+            <strong>Wat ik anders ben gaan doen:</strong> Sinds dit project ben ik
+            exploratiever beginnen ontwerpen. In plaats van snel naar één oplossing toe te
+            werken, omarm ik bewust meerdere ontwerpverkenningen, zeker bij complexe flows.
+          </p>
+          <p>
+            <strong>Wat ik leerde:</strong> AI prototyping heeft sindsdien een vaste plaats
+            gekregen in mijn workflow. Het laat me complexe interactiepatronen realistisch
+            testen en geeft gebruikers een gevoel van de echte flow in plaats van een
+            statisch scherm.
+          </p>
+        </section>
+
+      </div><!-- /case-content -->
+    </div><!-- /case-body -->
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Terug naar alle projecten</a>
+      <a href="case-study-ClassChat.html" data-slug="case-study-ClassChat" class="case-nav-next">ClassChat →</a>
+    </div>
+
+  </div><!-- /container -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Footer
+        root="./"  → resolves paths from root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-footer root="./"></site-footer>
+
+
+      <script src="js/components.js"></script>
+      <script src="js/modal.js"></script>
+      <script>
+        const { isAuthenticated, requiresPassword } = window.portfolioAuth;
+
+        const nextLink = document.querySelector('.case-nav-next');
+
+        if (nextLink) {
+          nextLink.addEventListener('click', (e) => {
+            const slug = nextLink.dataset.slug;
+
+            if (!requiresPassword(slug) || isAuthenticated()) {
+              return;
+            }
+
+            e.preventDefault();
+            const destinationHref = nextLink.getAttribute('href');
+            window.showPasswordModal(() => {
+              window.location.href = destinationHref;
+            });
+          });
+        }
+      </script>
+      <button id="scroll-to-top" class="scroll-to-top" data-tooltip="Back to top" aria-label="Terug naar boven" hidden>
+        <span aria-hidden="true">↑</span>
+      </button>
+      <script>
+        const scrollBtn = document.getElementById('scroll-to-top');
+        window.addEventListener('scroll', () => {
+          scrollBtn.hidden = window.scrollY < 300;
+        });
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      </script>
+      <script>
+        (function () {
+          const navLinks = document.querySelectorAll('.case-sidebar__nav a');
+          const sections = document.querySelectorAll('.case-content section[id]');
+          if (!navLinks.length || !sections.length) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((link) => link.classList.remove('active'));
+                const active = document.querySelector(
+                  `.case-sidebar__nav a[href="#${entry.target.id}"]`
+                );
+                if (active) active.classList.add('active');
+              }
+            });
+          }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+          sections.forEach((s) => observer.observe(s));
+        })();
+      </script>
+</body>
+</html>

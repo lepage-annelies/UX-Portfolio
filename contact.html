@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Annelies Le Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Logo-Annelies.svg" />
+  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <site-nav page="contact" root="./"></site-nav>
+
+  <main class="contact-page">
+    <div class="container">
+      <div class="contact-page__intro">
+        <p class="contact-page__eyebrow">Contact</p>
+        <h1>Laten we samenwerken</h1>
+        <p class="contact-page__lead">
+          Heb je een project, een vraag, of wil je gewoon even kennismaken?
+          Vul het formulier in of stuur een e-mail naar
+          <a class="contact-page__email-link" href="mailto:lepage.annelies@gmail.com">
+            <span>lepage.annelies@gmail.com</span>
+          </a>
+          en ik neem zo snel mogelijk contact met je op.
+        </p>
+      </div>
+
+      <form class="contact-form" action="https://formsubmit.co/ajax/lepage.annelies@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nieuw bericht via portfolio" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div class="contact-form__group">
+          <label for="name">Naam <span class="required-mark" aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" required />
+        </div>
+
+        <div class="contact-form__group">
+          <label for="email">E-mail <span class="required-mark" aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+          <span class="contact-form__field-error" id="email-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="contact-form__group">
+          <label for="message">Bericht <span class="required-mark" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <span class="btn-tooltip-wrapper">
+          <button class="btn btn--primary" type="submit" id="submit-btn" disabled>Verstuur bericht</button>
+          <span class="btn-tooltip" role="tooltip">Vul alle verplichte velden in om te versturen.</span>
+        </span>
+        <p class="contact-form__hint">Velden gemarkeerd met <span class="required-mark" aria-hidden="true">*</span> zijn verplicht.</p>
+      </form>
+    </div>
+  </main>
+
+  <site-footer root="./"></site-footer>
+
+  <script src="js/components.js"></script>
+  <script>
+    (function () {
+      const form = document.querySelector('.contact-form');
+      if (!form) return;
+
+      const submitBtn = document.getElementById('submit-btn');
+      const requiredFields = form.querySelectorAll('[required]');
+
+      const emailField = document.getElementById('email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function updateButton() {
+        const allFilled = Array.from(requiredFields).every(function (f) {
+          return f.value.trim() !== '';
+        });
+        const emailValid = emailPattern.test(emailField.value.trim());
+        submitBtn.disabled = !(allFilled && emailValid);
+      }
+
+      const emailError = document.getElementById('email-error');
+
+      function showEmailError(msg) {
+        emailError.textContent = msg;
+        emailField.setAttribute('aria-describedby', 'email-error');
+        emailField.classList.add('is-invalid');
+      }
+
+      function clearEmailError() {
+        emailError.textContent = '';
+        emailField.removeAttribute('aria-describedby');
+        emailField.classList.remove('is-invalid');
+      }
+
+      emailField.addEventListener('blur', function () {
+        if (emailField.value.trim() && !emailPattern.test(emailField.value.trim())) {
+          showEmailError('Voer een geldig e-mailadres in.');
+        } else {
+          clearEmailError();
+        }
+      });
+
+      emailField.addEventListener('input', function () {
+        clearEmailError();
+      });
+
+      requiredFields.forEach(function (f) {
+        f.addEventListener('input', updateButton);
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const data = {
+          name: form.elements['name'].value.trim(),
+          email: form.elements['email'].value.trim(),
+          message: form.elements['message'].value.trim(),
+        };
+
+        const action = form.action;
+
+        // Show success immediately for instant feedback
+        form.innerHTML = '<p class="contact-form__success">Bedankt voor je bericht! Ik neem zo snel mogelijk contact op.</p>' +
+          '<a href="index.html" class="btn btn--ghost contact-form__back-btn">&#8592; Terug naar de homepage</a>';
+
+        // Send via FormData (more reliable with FormSubmit's AJAX endpoint)
+        const formData = new FormData();
+        formData.append('name', data.name);
+        formData.append('email', data.email);
+        formData.append('message', data.message);
+        formData.append('_subject', 'Nieuw bericht via portfolio');
+        formData.append('_captcha', 'false');
+        formData.append('_template', 'table');
+
+        fetch(action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData,
+        })
+          .then(function (res) {
+            if (!res.ok) {
+              console.error('[Contact form] FormSubmit returned', res.status, res.statusText);
+            }
+          })
+          .catch(function (err) {
+            console.error('[Contact form] Fetch failed:', err);
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

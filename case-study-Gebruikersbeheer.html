@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding Redesign — Annelies Le Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Logo-Annelies.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="js/auth.js"></script>
+  <script>
+    if (!window.portfolioAuth.isAuthenticated()) {
+      window.location.replace('index.html');
+    }
+  </script>
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Navigation
+       page="home"  → marks "Projecten" as active
+        root="./"    → this file lives at project root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-nav page="home" root="./"></site-nav>
+
+
+  <!-- ── Case study header ── -->
+  <div class="case-hero">
+    <div class="container--narrow">
+      <a class="case-hero__back" href="index.html">Terug naar alle projecten</a>
+
+      <div class="case-hero__tags">
+        <span class="tag">UX Research</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">SaaS</span>
+      </div>
+
+      <h1 class="case-hero__title">
+        Onboarding Redesign — Van 38% naar 71% voltooiing
+      </h1>
+
+      <p class="case-hero__lead">
+        Gebruikers haakten massaal af in stap 3 van de onboarding. Door
+        diepte-interviews en iteratief testen ontdekte ik dat het probleem niet
+        de UI was — het was de volgorde van informatie.
+      </p>
+
+      <div class="case-meta">
+        <div class="case-meta__item">
+          <span class="case-meta__label">Rol</span>
+          <span class="case-meta__value">UX Designer</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Periode</span>
+          <span class="case-meta__value">Jan – Apr 2024</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Platform</span>
+          <span class="case-meta__value">Web (SaaS)</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Team</span>
+          <span class="case-meta__value">2 UX designers · 1 product manager · 3 developers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Cover image ── -->
+  <div class="container">
+    <div class="case-cover">
+      <img class="case-cover__image" src="Assets/Gebruikersbeheer/gebruikersbeheer-case-study-cover.png" alt="Gebruikersbeheer case study cover" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+      <div class="case-cover__placeholder" hidden>Cover afbeelding · 16:7 · Projectschermen</div>
+    </div>
+  </div>
+
+  <!-- ── Body: sidebar + content ── -->
+  <div class="container">
+    <div class="case-body">
+
+      <aside class="case-sidebar">
+        <ul class="case-sidebar__nav">
+          <li><a href="#context">Context</a></li>
+          <li><a href="#probleem">Probleem</a></li>
+          <li><a href="#rol">Mijn rol</a></li>
+          <li><a href="#aanpak">Aanpak</a></li>
+          <li><a href="#oplossing">Oplossing</a></li>
+          <li><a href="#resultaat">Resultaat</a></li>
+          <li><a href="#reflectie">Reflectie</a></li>
+        </ul>
+      </aside>
+
+      <div class="case-content">
+
+        <section id="context">
+          <p class="case-section__label">01 — Context</p>
+          <h2 class="case-section__title">Een groeiend platform met een sluipend probleem</h2>
+          <p>
+            Flowdesk is een B2B SaaS-platform voor projectbeheer, gebruikt door zo'n 12.000
+            kleine bedrijven. Het product zat in een groeifase: nieuwe gebruikers stroomden
+            binnen via advertenties, maar bleven niet hangen.
+          </p>
+          <p>
+            Analytics toonden dat <strong>62% van de nieuwe gebruikers het platform verliet
+            na de eerste sessie</strong> — zonder een enkel project aan te maken.
+          </p>
+        </section>
+
+        <section id="probleem">
+          <p class="case-section__label">02 — Probleem</p>
+          <h2 class="case-section__title">Stap 3 als breekpunt</h2>
+          <p>
+            Het onboarding-funnel bestond uit 6 stappen. Drop-off data liet een piek zien
+            in stap 3: "Stel je team in." Meer dan de helft verliet hier het proces.
+          </p>
+          <p>
+            Nieuwe gebruikers werden gevraagd om teamleden uit te nodigen vóór ze zelf
+            begrepen wat het product deed.
+          </p>
+          <blockquote class="case-question">
+            Hoe kunnen we nieuwe gebruikers de kernwaarde van Flowdesk laten ervaren vóór
+            we hen vragen actie te ondernemen?
+          </blockquote>
+        </section>
+
+        <section id="rol">
+          <p class="case-section__label">03 — Mijn rol</p>
+          <h2 class="case-section__title">Van data naar ontwerp</h2>
+          <p>
+            Ik was verantwoordelijk voor het volledige UX-traject: research, flows,
+            prototyping en het valideren van het nieuwe ontwerp met echte gebruikers.
+          </p>
+          <p>
+            Ik werkte samen met een product manager voor prioritering en twee front-end developers die
+            vroeg aanschoven — zo vermeden we technische verrassingen in de bouwfase.
+          </p>
+        </section>
+
+        <section id="aanpak">
+          <p class="case-section__label">04 — Aanpak</p>
+          <h2 class="case-section__title">Research eerst, oplossing later</h2>
+          <ul class="approach-list">
+            <li>
+              <span class="approach-list__method">Interviews</span>
+              <span class="approach-list__insight">
+                8 diepte-interviews met recente churners → gebruikers voelden zich
+                overweldigd. "Ik snapte niet wat ik moest doen."
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Analytics</span>
+              <span class="approach-list__insight">
+                Funnel-analyse in Mixpanel → 54% drop op stap 3, gemiddelde sessieduur
+                vóór drop: 47 seconden.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Benchmarking</span>
+              <span class="approach-list__insight">
+                Analyse van 6 concurrenten → elk platform dat de kernactie eerst toont
+                heeft hogere activatierates.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Usability test</span>
+              <span class="approach-list__insight">
+                Test met 5 deelnemers → niemand begreep waarom stap 3 noodzakelijk was
+                vóór gebruik.
+              </span>
+            </li>
+          </ul>
+          <div class="case-image-frame">
+            <img class="case-image-frame__image" src="Assets/Gebruikersbeheer/gebruikersbeheer-research-wireframes.png" alt="Wireframes en user flow van Gebruikersbeheer" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+            <div class="case-image-placeholder" hidden>Wireframes &amp; user flow — 3 varianten</div>
+          </div>
+          <p class="case-image-caption">
+            Drie conceptuele richtingen voor de herziene onboarding, op basis van de
+            "value-first" hypothese.
+          </p>
+          <p>
+            Op basis van de inzichten ontwierp ik 3 concepten. Variant B haalde de beste
+            testresultaten: simpel, direct, geen keuzedruk.
+          </p>
+        </section>
+
+        <section id="oplossing">
+          <p class="case-section__label">05 — Oplossing</p>
+          <h2 class="case-section__title">Minder stappen, meer begrip</h2>
+          <p>
+            Het eindontwerp herstructureert de onboarding van 6 naar 4 stappen.
+            De "team uitnodigen"-stap verschuift naar na de eerste succesvolle actie.
+          </p>
+          <p>
+            We voegden een progressie-indicator toe en kortere, actiegerichte
+            instructieteksten. Elke stap eindigt met een zichtbaar resultaat.
+          </p>
+          <div class="case-image-frame">
+            <img class="case-image-frame__image" src="Assets/Gebruikersbeheer/gebruikersbeheer-solution.png" alt="Eindontwerp van het Gebruikersbeheer project" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+            <div class="case-image-placeholder case-image-placeholder--green" hidden>
+              Eindontwerp — Onboarding flow · 4 schermen
+            </div>
+          </div>
+          <p class="case-image-caption">
+            De herziene flow: account aanmaken → eerste project → rondleiding →
+            team uitnodigen (optioneel).
+          </p>
+        </section>
+
+        <section id="resultaat">
+          <p class="case-section__label">06 — Resultaat</p>
+          <h2 class="case-section__title">Van 38% naar 71%</h2>
+          <p>
+            Na uitrol (A/B test, 3 weken, n=2.400) zagen we significante verbeteringen
+            over de hele funnel.
+          </p>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Vóór</th>
+                <th>Na</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Onboarding voltooiing</td>
+                <td>38%</td>
+                <td class="positive">71% (+87%)</td>
+              </tr>
+              <tr>
+                <td>Drop-off op stap 3</td>
+                <td>54%</td>
+                <td class="positive">12% (−78%)</td>
+              </tr>
+              <tr>
+                <td>Activatie (1e project aangemaakt)</td>
+                <td>29%</td>
+                <td class="positive">58% (+100%)</td>
+              </tr>
+              <tr>
+                <td>Retention dag 7</td>
+                <td>22%</td>
+                <td class="positive">31% (+41%)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Kwalitatief: gebruikers rapporteerden gemiddeld 4,3/5 voor begrijpelijkheid
+            van de onboarding (was 2,8/5).
+          </p>
+        </section>
+
+        <section id="reflectie">
+          <p class="case-section__label">07 — Reflectie</p>
+          <h2 class="case-section__title">Wat ik hieruit meenam</h2>
+          <p>
+            <strong>Wat goed ging:</strong> Early involvement van developers zorgde
+            ervoor dat het ontwerp haalbaar bleef.
+          </p>
+          <p>
+            <strong>Wat ik anders zou doen:</strong> Ik wachtte te lang om low-fi
+            prototypes te testen. Schetsversies leverden al waardevolle inzichten.
+          </p>
+          <p>
+            <strong>Wat ik leerde:</strong> Het probleem zat nooit in de UI zelf.
+            Volgorde van informatie is ook UX.
+          </p>
+        </section>
+
+      </div><!-- /case-content -->
+    </div><!-- /case-body -->
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Terug naar alle projecten</a>
+      <a href="case-study-ClassChat.html" data-slug="case-study-ClassChat" class="case-nav-next">ClassChat→</a>
+    </div>
+
+  </div><!-- /container -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Footer
+        root="./"  → resolves paths from root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-footer root="./"></site-footer>
+
+
+      <script src="js/components.js"></script>
+      <script src="js/modal.js"></script>
+      <script>
+        const { isAuthenticated, requiresPassword } = window.portfolioAuth;
+
+        const nextLink = document.querySelector('.case-nav-next');
+
+        if (nextLink) {
+          nextLink.addEventListener('click', (e) => {
+            const slug = nextLink.dataset.slug;
+
+            if (!requiresPassword(slug) || isAuthenticated()) {
+              return;
+            }
+
+            e.preventDefault();
+            const destinationHref = nextLink.getAttribute('href');
+            window.showPasswordModal(() => {
+              window.location.href = destinationHref;
+            });
+          });
+        }
+      </script>
+      <button id="scroll-to-top" class="scroll-to-top" data-tooltip="Back to top" aria-label="Terug naar boven" hidden>
+        <span aria-hidden="true">↑</span>
+      </button>
+      <script>
+        const scrollBtn = document.getElementById('scroll-to-top');
+        window.addEventListener('scroll', () => {
+          scrollBtn.hidden = window.scrollY < 300;
+        });
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      </script>
+      <script>
+        (function () {
+          const navLinks = document.querySelectorAll('.case-sidebar__nav a');
+          const sections = document.querySelectorAll('.case-content section[id]');
+          if (!navLinks.length || !sections.length) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((link) => link.classList.remove('active'));
+                const active = document.querySelector(
+                  `.case-sidebar__nav a[href="#${entry.target.id}"]`
+                );
+                if (active) active.classList.add('active');
+              }
+            });
+          }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+          sections.forEach((s) => observer.observe(s));
+        })();
+      </script>
+</body>
+</html>

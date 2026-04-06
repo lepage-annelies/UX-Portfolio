@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultaten &amp; Inzichten Dashboard — Annelies Le Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Logo-Annelies.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="js/auth.js"></script>
+  <script>
+    if (!window.portfolioAuth.isAuthenticated()) {
+      window.location.replace('index.html');
+    }
+  </script>
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Navigation
+       page="home"  → marks "Projecten" as active
+        root="./"    → this file lives at project root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-nav page="home" root="./"></site-nav>
+
+
+  <!-- ── Case study header ── -->
+  <div class="case-hero">
+    <div class="container--narrow">
+      <a class="case-hero__back" href="index.html">Terug naar alle projecten</a>
+
+      <div class="case-hero__tags">
+        <span class="tag">Information Architecture</span>
+        <span class="tag">UX Design</span>
+        <span class="tag">(AI) Prototyping</span>
+      </div>
+
+      <h1 class="case-hero__title">
+        Resultaten &amp; Inzichten — Verspreide data terugbrengen tot één overzicht
+      </h1>
+
+      <p class="case-hero__lead">
+        In het oude platform waren leerlingresultaten verspreid over de volledige
+        boekstructuur en tientallen klikken verwijderd. Results &amp; Insights brengt
+        ze op één centrale, overzichtelijke plek, gebouwd op een complexe datastructuur
+        die eerst volledig ontrafeld moest worden voor ons ontwerp kon standhouden.
+      </p>
+
+      <div class="case-meta">
+        <div class="case-meta__item">
+          <span class="case-meta__label">Rol</span>
+          <span class="case-meta__value">UX Designer</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Periode</span>
+          <span class="case-meta__value">Feb 2025 – heden</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Platform</span>
+          <span class="case-meta__value">Digitaal leerplatform · Web</span>
+        </div>
+        <div class="case-meta__item">
+          <span class="case-meta__label">Team</span>
+          <span class="case-meta__value">1-2 UX designers · 1 product manager · 2 developers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Cover image ── -->
+  <div class="container">
+    <div class="case-cover">
+      <img class="case-cover__image" src="Assets/Results-Insights/Results&Insights - Case study hero - 2.png" alt="Resultaten en Inzichten case study cover" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+      <div class="case-cover__placeholder" hidden>Coverafbeelding · 16:7 · Resultaten &amp; Inzichten dashboard</div>
+    </div>
+  </div>
+
+  <!-- ── Body: sidebar + content ── -->
+  <div class="container">
+    <div class="case-body">
+
+      <aside class="case-sidebar">
+        <ul class="case-sidebar__nav">
+          <li><a href="#context">Context</a></li>
+          <li><a href="#probleem">Probleem</a></li>
+          <li><a href="#rol">Mijn rol</a></li>
+          <li><a href="#aanpak">Aanpak</a></li>
+          <li><a href="#oplossing">Oplossing</a></li>
+          <li><a href="#resultaat">Resultaat</a></li>
+          <li><a href="#reflectie">Reflectie</a></li>
+        </ul>
+      </aside>
+
+      <div class="case-content">
+
+        <section id="context">
+          <p class="case-section__label">01 — Context</p>
+          <h2 class="case-section__title">Van verspreide data naar één centrale plek</h2>
+          <p>
+            Results &amp; Insights is een nieuw onderdeel binnen het digitale leerplatform
+            van Infinitas Learning, ontwikkeld voor Plantyn en Noordhoff. De ambitie:
+            alle resultaten van leerlingen op één toegankelijke, leesbare plek brengen
+            voor de leerkracht.
+          </p>
+          <p>
+            In het oude platform waren resultaten verspreid over de volledige boekstructuur.
+            Ze waren moeilijk te vinden, vereisten veel klikken en waren nauwelijks
+            leesbaar in tabelvorm. Het project startte in februari 2025 en loopt
+            vandaag nog.
+          </p>
+        </section>
+
+        <section id="probleem">
+          <p class="case-section__label">02 — Probleem</p>
+          <h2 class="case-section__title">Resultaten die niemand kon vinden</h2>
+          <p>
+            Leerkrachten die een beeld wilden krijgen van hoe hun leerlingen ervoor stonden,
+            moesten diep in de boekstructuur duiken. Er was geen gecentraliseerd overzicht,
+            de tabellen waren slecht leesbaar en een snel klasoverzicht was simpelweg
+            niet mogelijk.
+          </p>
+          <p>
+            Maar de uitdaging reikte verder dan navigatie. Achter de schermen werkten we
+            met een uitzonderlijk complexe datastructuur: resultaten van geplande taken,
+            ongeplande activiteiten, meerdere niveaus in de contentstructuur en leerdoelen
+            kwamen allemaal vermengd binnen. Tel daarbij op dat
+            <strong>63% van onze gebruikers slechts 600px schermhoogte</strong> heeft, en de
+            ontwerpruimte voor data werd nog verder beperkt.
+          </p>
+          <blockquote class="case-question">
+            Hoe geven we leerkrachten snel en eenvoudig inzicht in de resultaten van hun
+            leerlingen, zonder hen te overweldigen met data?
+          </blockquote>
+        </section>
+
+        <section id="rol">
+          <p class="case-section__label">03 — Mijn rol</p>
+          <h2 class="case-section__title">UX Designer in een evoluerend team</h2>
+          <p>
+            Van februari tot juni 2025 werkte ik samen met een tweede UX Designer, een
+            product manager en twee developers. Vanaf juni ging ik verder als enige
+            UX Designer op het project.
+          </p>
+          <p>
+            Ook de productkant veranderde meerdere keren: van februari tot mei was er
+            een eerste product manager, van mei tot september was er geen product manager, en vanaf september
+            startte een nieuwe product manager. Daarnaast waren er ook bij development verschillende
+            verschuivingen. Het project heeft in korte tijd veel teamwissels gekend.
+          </p>
+          <p>
+            Mijn verantwoordelijkheid omvatte de volledige UX-aanpak: conceptontwikkeling,
+            informatiearchitectuur, interactieontwerp, prototyping en het opzetten en
+            begeleiden van gebruikerstesten.
+          </p>
+        </section>
+
+        <section id="aanpak">
+          <p class="case-section__label">04 — Aanpak</p>
+          <h2 class="case-section__title">Vier fases, van gebruikersvisie naar werkend product</h2>
+          <ul class="approach-list">
+            <li>
+              <span class="approach-list__method">Fase 1</span>
+              <span class="approach-list__insight">
+                Vanuit gebruikersbehoeften ontwierpen we snelle concepten, getest in twee
+                rondes gebruikersinterviews via Figma-prototypes. De concepten oogden sterk,
+                maar bij development bleek de onderliggende structuur te breken.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Fase 2</span>
+              <span class="approach-list__insight">
+                We voegden engineering reviews toe vóór we concepten vastlegden. Development
+                flagde meteen: "Je mixt twee concepttypes." Technische beperkingen werden
+                realiteitschecks in plaats van blokkades.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Fase 3</span>
+              <span class="approach-list__insight">
+                Zes interactieve Figma Make-prototypes werden na dev-review teruggebracht
+                naar vier en getest met 6 leerkrachten. In deze fase begonnen we ook een dummy
+                database aan onze prototypes te koppelen, zodat leerkrachten met realistische inhoud en data
+                konden werken in plaats van dummy tekst. Dit maakte onze prototypes aanzienlijk realistischer
+                en gaf testdeelnemers een veel beter inzicht in hoe het daadwerkelijk zou voelen.
+                Daarna volgde een ronde met interviews met 5 leerkrachten én unmoderated remote testing met +/- 20 interne stakeholders via Useberry. 
+                Geen duidelijke winnaar dus we itereren verder.
+              </span>
+            </li>
+            <li>
+              <span class="approach-list__method">Fase 4</span>
+              <span class="approach-list__insight">
+                Door een stap terug te zetten ontdekten we dat onze data geen nette
+                categorieën was, maar één grote kluwen van gemengde resultaattypes.
+                Door elk type te ontwarren en te begrijpen welke combineerbaar waren,
+                stopten onze UX-patronen eindelijk met breken.
+              </span>
+            </li>
+          </ul>
+          <div class="case-image-frame">
+            <img class="case-image-frame__image" src="Assets/Results-Insights/Results&Insights - Case study inline image - 1.png" alt="Wireframes en user flow van Resultaten en Inzichten" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+            <div class="case-image-placeholder" hidden>Prototype voorbeelden Resultaten &amp; Inzichten</div>
+          </div>
+          <p class="case-image-caption">
+            Vele verschillende prototypes en iteraties later: van high fidelity wireframes tot interactieve Figma Make-prototypes met dummy data.
+          </p>
+          <p>
+            Het eindconcept werd als Figma Make-prototype getest met 12 leerkrachten.
+            De feedback was overwegend positief; naast copy-aanpassingen kregen we ook
+            gerichte feedback op de tabellen, die op dat moment nog niet herontworpen
+            waren. In mei staan bijkomende user tests gepland om verder te itereren en
+            te optimaliseren.
+          </p>
+        </section>
+
+        <section id="oplossing">
+          <p class="case-section__label">05 — Oplossing</p>
+          <h2 class="case-section__title">Een custom filterarchitectuur voor complexe data op een klein scherm</h2>
+          <p>
+            De kern van de oplossing is een custom filter search bar met aangepaste
+            interactiepatronen. De filtering werkt met twee filter groeperingen: de eerste
+            bepaalt wat er in de tweede beschikbaar is. Om leerkrachten soepel door
+            die complexiteit te begeleiden, openen velden automatisch en zorgen kleine
+            animaties voor een gevoel van snelheid en eenvoud, zonder de onderliggende
+            complexiteit zichtbaar te maken.
+          </p>
+          <p>
+            Omdat 63% van de gebruikers slechts 600px schermhoogte heeft, kozen we voor
+            een filter bar met een dense state en een sidepanel voor de tweede filter
+            group. Dat sidepanel kan ook verborgen worden om maximale schermruimte vrij
+            te maken voor de data zelf.
+          </p>
+          <div class="case-image-frame">
+            <video class="case-image-frame__image" autoplay loop muted>
+              <source src="Assets/Results-Insights/Drilling Down Prototype.mp4" type="video/mp4">
+              <img src="Assets/Results-Insights/Results&Insights - Case study inline image - video fallback.png" alt="Custom filter search bar mit dense state und verbergbaar sidepanel">
+            </video>
+            <div class="case-image-placeholder case-image-placeholder--green" hidden>
+              Video - Interactief prototype getest in fase 4, met custom filter search bar met dense state en verbergbaar sidepanel.
+            </div>
+          </div>
+          <p class="case-image-caption">
+            Video - Interactief prototype getest in fase 4, met custom filter search bar met dense state en verbergbaar sidepanel.
+          </p>
+          <p>
+            Voor de datatabellen lag de focus op leesbaarheid en compactheid. We
+            introduceerden drie density states met dense als standaard, een aangepast
+            monolettertype voor scores en een minimaal gebruik van iconen en kleur
+            om visuele chaos te beperken.
+          </p>
+        </section>
+
+        <section id="resultaat">
+          <p class="case-section__label">06 — Resultaat</p>
+          <h2 class="case-section__title">Positieve testen, beta in april, uitrol in september</h2>
+          <p>
+            Het project is intern gereleased en wordt in april 2026 uitgerold naar de
+            scholen die deelnemen aan de betatests. De bredere uitrol naar alle leerkrachten
+            secundair onderwijs staat gepland voor september 2026.
+          </p>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Outcome</th>
+                <th>Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gebruikerstesten</td>
+                <td class="positive">Leerkrachten vinden resultaten sneller en ervaren de tabellen als overzichtelijker</td>
+              </tr>
+              <tr>
+                <td>Interviewfeedback</td>
+                <td class="positive">Overwegend positief doorheen alle testrondes; eindconcept bevestigd door 12 leerkrachten</td>
+              </tr>
+              <tr>
+                <td>Beta-uitrol</td>
+                <td class="positive">April 2026 live voor deelnemende scholen</td>
+              </tr>
+              <tr>
+                <td>Volgende fase</td>
+                <td class="positive">Nieuwe user tests in mei, daarna actionable insights en leerdoelkoppelingen in de volgende release</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            In elke testronde klikten gebruikers meteen door naar de inzichten, een sterk
+            signaal dat de volgende fase, actionable insights en leerdoelkoppelingen,
+            de juiste richting is.
+          </p>
+        </section>
+
+        <section id="reflectie">
+          <p class="case-section__label">07 — Reflectie</p>
+          <h2 class="case-section__title">Wat ik hieruit meenam</h2>
+          <blockquote class="case-question">
+            User needs shape what we build, Information architecture determines whether it works.
+          </blockquote>
+          <p>
+            <strong>Wat goed ging:</strong> Voor de filter bar ben ik een custom
+            filterinteractie beginnen ontwikkelen. Concepten die strikt de standaard
+            design system-regels volgden met eenvoudige dropdowns voelden trager,
+            saaier en namen meer plaats in. Het aangepaste filtercomponent maakte de
+            flow vlotter en liet ons tegelijk klassen en leerlingen combineren in één
+            filter. Tegelijk zorgde de IA-doorbraak ervoor dat onze patronen eindelijk
+            stabiel bleven in plaats van telkens te breken bij implementatie.
+          </p>
+          <p>
+            <strong>Wat ik anders zou doen:</strong> In de eerste fases ontwierpen
+            we te snel vanuit gebruikersnoden zonder de onderliggende data te begrijpen.
+            Die combinatie van UX én informatiearchitectuur had vroeger in het proces
+            aanwezig moeten zijn.
+          </p>
+          <p>
+            <strong>Wat ik leerde:</strong> Goede UX bouwt ook op een goed begrip van
+            de data. Informatiearchitectuur is niet alleen een deliverable, het is de
+            reden waarom je ontwerp al dan niet werkt in productie.
+          </p>
+          
+        </section>
+
+      </div><!-- /case-content -->
+    </div><!-- /case-body -->
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Terug naar alle projecten</a>
+      <a href="case-study-Taskplanner.html" data-slug="case-study-Taskplanner" class="case-nav-next">Taskplanner →</a>
+    </div>
+
+  </div><!-- /container -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Footer
+        root="./"  → resolves paths from root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-footer root="./"></site-footer>
+
+
+      <script src="js/components.js"></script>
+      <script src="js/modal.js"></script>
+      <script>
+        const { isAuthenticated, requiresPassword } = window.portfolioAuth;
+
+        const nextLink = document.querySelector('.case-nav-next');
+
+        if (nextLink) {
+          nextLink.addEventListener('click', (e) => {
+            const slug = nextLink.dataset.slug;
+
+            if (!requiresPassword(slug) || isAuthenticated()) {
+              return;
+            }
+
+            e.preventDefault();
+            const destinationHref = nextLink.getAttribute('href');
+            window.showPasswordModal(() => {
+              window.location.href = destinationHref;
+            });
+          });
+        }
+      </script>
+      <button id="scroll-to-top" class="scroll-to-top" data-tooltip="Back to top" aria-label="Terug naar boven" hidden>
+        <span aria-hidden="true">↑</span>
+      </button>
+      <script>
+        const scrollBtn = document.getElementById('scroll-to-top');
+        window.addEventListener('scroll', () => {
+          scrollBtn.hidden = window.scrollY < 300;
+        });
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      </script>
+      <script>
+        (function () {
+          const navLinks = document.querySelectorAll('.case-sidebar__nav a');
+          const sections = document.querySelectorAll('.case-content section[id]');
+          if (!navLinks.length || !sections.length) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((link) => link.classList.remove('active'));
+                const active = document.querySelector(
+                  `.case-sidebar__nav a[href="#${entry.target.id}"]`
+                );
+                if (active) active.classList.add('active');
+              }
+            });
+          }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+          sections.forEach((s) => observer.observe(s));
+        })();
+      </script>
+</body>
+</html>

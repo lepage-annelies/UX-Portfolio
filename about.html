@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over mij — Annelies Le Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Logo-Annelies.svg" />
+  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Navigation
+       page="about"  → marks "Over mij" as active
+        root="./"     → this file lives at project root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-nav page="about" root="./"></site-nav>
+
+
+  <!-- ── About ── -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-photo-wrap">
+          <div class="about-photo">
+            <img class="about-photo__image" src="Assets/ProfilePic.jpg" alt="Portret van Annelies Le Page" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+            <span class="about-photo__placeholder" hidden>Portretfoto · 4:5</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p class="about-content__eyebrow">Over mij</p>
+
+          <h1>
+            Ik ben Annelies —<br>
+            UX designer die complexiteit<br>
+            vertaalt naar heldere,<br>
+            menselijke ervaringen.
+          </h1>
+
+          <p>
+            Ik ontwerp digitale producten die intuïtief aanvoelen en mensen echt
+            vooruithelpen. Ik vertaal complexe vragen naar heldere ervaringen,
+            altijd vanuit de gebruiker.
+          </p>
+
+          <p>
+            De afgelopen jaren werkte ik aan verschillende digitale producten,
+            waaronder educatieve platformen bij Infinitas Learning Product &amp;
+            Technologie (Plantyn en Noordhoff). Daar bracht ik UX research,
+            informatiearchitectuur en interactieontwerp samen in concrete
+            oplossingen.
+          </p>
+
+          <p>
+            Naast projectwerk geef ik UX/UI design aan LUCA School of Arts.
+            Buiten werk laad ik op met fotografie, yoga en het verzamelen van
+            postkaarten. Laten we samen iets maken dat mensen echt helpt.
+          </p>
+
+          <div class="about-divider"></div>
+
+          <div class="skills-grid">
+              <div class="skills-group">
+                <p class="skills-group__label">UX/UI skills</p>
+                <ul class="skills-group__list">
+                  <li>User research (interviews, surveys)</li>
+                  <li>Usability testing</li>
+                  <li>Information architecture </li>
+                  <li>Visual interface design</li>
+                  <li>Design systems & components</li>
+                </ul>
+              </div>
+              <div class="skills-group">
+                <p class="skills-group__label">Tools & workflows</p>
+                <ul class="skills-group__list">
+                  <li>Figma (design & prototyping)</li>
+                  <li>AI-assisted design workflows</li>
+                  <li>AI-supported ideation & prototyping</li>
+                  <li>Adobe Creative Cloud</li>
+                  <li>HTML &amp; CSS basics</li>
+                </ul>
+              </div>
+            </div>
+
+          <div class="about-cta">
+            <a class="btn btn--primary"   href="index.html">Bekijk mijn projecten</a>
+            <a class="btn btn--secondary" href="contact.html">
+              Contacteer mij <i class="fas fa-paper-plane"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════
+       COMPONENT: Footer
+        root="./"  → resolves paths from root
+  ═══════════════════════════════════════════════════════════ -->
+      <site-footer root="./"></site-footer>
+
+
+      <script src="js/components.js"></script>
+</body>
+</html>

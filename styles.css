@@ -174,12 +174,11 @@ a { color: inherit; text-decoration: none; }
   display: block;
   height: 36px;
   width: auto;
-  filter: saturate(1.2) hue-rotate(170deg);
 }
 
 .nav-logoname {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--text-sm);
+  font-weight: 900;
   color: var(--color-highlight);
   letter-spacing: -0.3px;
 }

@@ -20,7 +20,7 @@
     inputEl.type = 'password';
     document.body.classList.add('modal-open');
     toggleEl.setAttribute('aria-pressed', 'false');
-    toggleEl.setAttribute('aria-label', 'Show password');
+    toggleEl.setAttribute('aria-label', 'Wachtwoord tonen');
     inputEl.focus();
     document.addEventListener('keydown', handleModalKeydown);
   }
@@ -34,13 +34,14 @@
     wrapper.innerHTML = `
       <div class="modal-overlay" id="password-modal" role="dialog" aria-modal="true" aria-labelledby="pw-modal-title" hidden>
         <div class="modal">
-          <button class="modal__close" id="pw-close" aria-label="Close" type="button">×</button>
-          <h2 class="modal__title" id="pw-modal-title">This project is protected</h2>
+          <button class="modal__close" id="pw-close" aria-label="Sluiten" type="button">×</button>
+          <h2 class="modal__title" id="pw-modal-title">Dit project is beveiligd</h2>
+          <p class="pw-modal__desc">Dit project bevat vertrouwelijke informatie en is daarom met een wachtwoord beschermd.</p>
           <form class="pw-form" id="pw-form" novalidate>
-            <label for="pw-input" class="sr-only">Password</label>
+            <label for="pw-input" class="sr-only">Wachtwoord</label>
             <div class="modal__field">
-              <input class="modal__input" id="pw-input" type="password" placeholder="Password" autocomplete="off" />
-              <button class="modal__toggle" id="pw-toggle" type="button" aria-label="Show password" aria-pressed="false">
+              <input class="modal__input" id="pw-input" type="password" placeholder="Wachtwoord" autocomplete="off" />
+              <button class="modal__toggle" id="pw-toggle" type="button" aria-label="Wachtwoord tonen" aria-pressed="false">
                 <svg class="modal__toggle-icon modal__toggle-icon--show" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path d="M12 5C6.5 5 2.1 8.3 1 12c1.1 3.7 5.5 7 11 7s9.9-3.3 11-7c-1.1-3.7-5.5-7-11-7Zm0 11.2A4.2 4.2 0 1 1 12 7.8a4.2 4.2 0 0 1 0 8.4Zm0-6.6a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8Z" fill="currentColor"/>
                 </svg>
@@ -50,7 +51,7 @@
               </button>
             </div>
             <p class="modal__error" id="pw-error" hidden></p>
-            <button class="btn btn--primary pw-submit" id="pw-submit" type="submit">Submit</button>
+            <button class="btn btn--primary pw-submit" id="pw-submit" type="submit">Bevestigen</button>
           </form>
         </div>
       </div>
@@ -88,7 +89,7 @@
       closeModal();
     } else {
       errorEl.hidden = false;
-      errorEl.textContent = 'Incorrect password';
+      errorEl.textContent = 'Onjuist wachtwoord';
       inputEl.value = '';
       inputEl.focus();
     }
@@ -109,7 +110,7 @@
 
     inputEl.type = isVisible ? 'password' : 'text';
     toggleEl.setAttribute('aria-pressed', String(!isVisible));
-    toggleEl.setAttribute('aria-label', isVisible ? 'Show password' : 'Hide password');
+    toggleEl.setAttribute('aria-label', isVisible ? 'Wachtwoord tonen' : 'Wachtwoord verbergen');
     inputEl.focus();
   }
 

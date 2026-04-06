@@ -1,7 +1,7 @@
 (function () {
   const AUTH_KEY = 'portfolio_authenticated';
   const TAB_AUTH_VALUE = 'portfolio_authenticated';
-  const SHARED_PASSWORD = 'geheim';
+  const SHARED_PASSWORD = 'sollicitatie2026';
 
   const PROJECT_CONFIG = {
     'case-study-Results&Insights': { protected: true, password: SHARED_PASSWORD },

@@ -63,6 +63,7 @@ class SiteNav extends HTMLElement {
   <div class="nav-inner">
     <a class="nav-logo" href="${resolveHref('index.html')}">
       <img src="${resolveHref('Assets/Logo-Annelies.svg')}" alt="Annelies Le Page" />
+      <span class="nav-logoname">Annelies Le Page</span>
     </a>
     <button
       class="nav-toggle"

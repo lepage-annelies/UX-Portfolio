@@ -1700,6 +1700,13 @@ footer {
   width: 100%;
 }
 
+.pw-submit--centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 /* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */

@@ -51,7 +51,7 @@
               </button>
             </div>
             <p class="modal__error" id="pw-error" hidden></p>
-            <button class="btn btn--primary pw-submit" id="pw-submit" type="submit">Bevestigen</button>
+            <button class="btn btn--primary pw-submit pw-submit--centered" id="pw-submit" type="submit">Bevestigen</button>
           </form>
         </div>
       </div>

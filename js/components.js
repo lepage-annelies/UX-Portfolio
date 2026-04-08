@@ -153,7 +153,7 @@ class SiteFooter extends HTMLElement {
       <a class="social-icon" href="https://dribbble.com/Annelies_Le_Page" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" data-tooltip="Dribbble">
         <img src="${resolveHref('Assets/Dribbble Brand Icon.svg')}" alt="" />
       </a>
-      <!--<a href="${resolveHref('Assets/KleurplatenBumba.pdf')}" target="_blank" rel="noopener noreferrer">CV downloaden</a>-->
+      <a href="${resolveHref('Assets/CurriculumVitae-AnneliesLePage-2026.pdf')}" target="_blank" rel="noopener noreferrer">CV downloaden</a>
     </nav>
   </div>
 </footer>`;
